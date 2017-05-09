@@ -1,0 +1,34 @@
+.popup {
+
+  &.popup_registration_add {
+    width: 460px;
+    text-align: center;
+    padding-bottom: 22px;
+
+    .popup_title {
+      margin-top: 20px;
+
+      span {
+        background: url(/assets/images/popup_reg_icon.png) center top no-repeat;
+        background-size: 74px;
+        color: #2D363B;
+        font-size: 18px;
+        line-height: 23px;
+        padding-top: 84px;
+      }
+    }
+
+    a {
+
+      &:not(.popup_close) {
+        display: inline-block;
+        vertical-align: top;
+        color: #26B6A1;
+        font-weight: 500;
+        line-height: 19px;
+        text-decoration: none;
+        margin-top: 25px;
+      }
+    }
+  }
+}

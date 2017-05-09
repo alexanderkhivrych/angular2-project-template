@@ -1,0 +1,54 @@
+<div class="login">
+  <div class="login_content"><a href="#" class="login_logo"><img src="/assets/images/logo.png" alt=""></a>
+    <div class="login_content_title">
+      <h1>Спілкуйтеся з вашими сусідами</h1>
+      <p>Що почалось у мережі, продовжується у дворі.</p>
+      <div class="login_links">
+        <a href="#" class="login_appstore"></a>
+        <a href="#" class="login_playmarket"></a>
+      </div>
+    </div>
+    <div class="login_nav">
+      <ul>
+        <li><a href="#">Про мережу</a></li>
+        <li><a href="#">Наш маніфест</a></li>
+        <li><a href="#">Сусідські спільноти</a></li>
+        <li><a href="#">Заходи</a></li>
+        <li><a href="#">Урядові організації</a></li>
+        <li><a href="#">Довідник</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="login_form">
+  <div class="login_form_content" [ngSwitch]="state">
+    <h2 *ngSwitchCase="STATES.DEFAULT" [@titleAnimation]="getActivityState(STATES.DEFAULT)">Увійти</h2>
+    <h2 *ngSwitchCase="STATES.RESTORE" [@titleAnimation]="getActivityState(STATES.RESTORE)">Відновити пароль</h2>
+    <!-- <router-outlet [@routeAnimation]=""></router-outlet> -->
+    <app-login-main *ngSwitchCase="STATES.DEFAULT" [state]="pending || state" (onAnimationFinished)="onAnimationFinished($event)"></app-login-main>
+    <app-login-restore *ngSwitchCase="STATES.RESTORE"></app-login-restore>
+  </div>
+
+  <div class="login_form_section">
+    <div class="login_form_agree">
+      <div class="login_form_agree_item">
+        <div class="checker">
+          <span [ngClass]="{ 'checked': model.remember }">
+            <input type="checkbox" id="remember"
+                   name="remember" [(ngModel)]="model.remember"
+            />
+          </span>
+        </div>
+        <label for="remember">Залишатися в системі</label>
+      </div>
+
+      <a routerLink="/sign-up">Немає акаунта?</a>
+    </div>
+    <div class="login_form_links">
+      <p><a (click)="toggleRestorePassword()" href="javascript:void(0);">Забули пароль?</a></p>
+      <!-- <p><a routerLink="restore">Забули пароль?</a></p> -->
+      <p><a routerLink="./sign-up">Зареєструйтесь</a></p>
+    </div>
+  </div>
+</div>

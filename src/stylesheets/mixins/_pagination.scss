@@ -1,0 +1,114 @@
+@mixin pagination-pages() {
+  $pagination-color: #696f76;
+  $pagination-color-current: #7f7674;
+  $pagination-font-size: 15px;
+  $pagination-width: 27px;
+  $pagination-height: 37px;
+  $pagination-border-width: 0;
+  $pagination-border-color: transparent;
+  $pagination-bg-default: #dce9ec;
+  $pagination-bg-current: #dce9ec;
+  $pagination-element-margin: 10px;
+
+  ul {
+    list-style: none;
+    border-radius: 30px;
+    text-align: center;
+    background: #e6eaef;
+    max-width: 740px;
+    margin: 0 auto;
+    position: relative;
+
+    li {
+      display: inline-block;
+      vertical-align: top;
+      margin: 0 $pagination-element-margin;
+
+      &:first-child {
+        margin: 0;
+      }
+
+      &:last-child {
+        margin: 0;
+      }
+
+      span {
+        color: $pagination-color;
+        font-size: $pagination-font-size;
+        display: block;
+        width: $pagination-width;
+        height: $pagination-height;
+        line-height: $pagination-height;
+
+        &.pag_prev {
+          width: 135px;
+          height: 37px;
+          position: absolute;
+          left: 0;
+          background: #2d3136;
+          border-radius: 40px;
+
+          &.disabled {
+            color: #fff;
+            opacity: .2;
+            cursor: default;
+          }
+
+          a {
+            display: block;
+            color: transparent;
+            font-size: 16px;
+            line-height: 37px;
+            font-weight: 300;
+            color: #fff;
+
+            &:hover {
+              border-radius: 40px;
+              background: #696f76;
+            }
+          }
+        }
+
+        &.pag_next {
+          width: 135px;
+          height: 37px;
+          position: absolute;
+          right: 0;
+          background: #2d3136;
+          border-radius: 40px;
+
+          &.disabled {
+            color: #fff;
+            opacity: .2;
+            cursor: default;
+          }
+
+          a {
+            display: block;
+            font-size: 16px;
+            line-height: 37px;
+            font-weight: 300;
+            color: #fff;
+            background: #2d3136;
+            border-radius: 40px;
+
+            &:hover {
+              background: #696f76;
+            }
+          }
+        }
+
+        &.current {
+          color: $pagination-color-current;
+        }
+
+        a {
+          color: $pagination-color;
+          display: inline-block;
+          vertical-align: middle;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}

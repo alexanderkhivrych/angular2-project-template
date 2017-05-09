@@ -1,0 +1,21 @@
+<div class="messages">
+  <div class="messages_title"><span>Повідомлення</span>
+    <button (click)="messageForm.open()" class="button button_write">Написати</button>
+  </div>
+  <div class="tabs messages_tabs">
+    <div data-tab="incoming" class="tabs_item current">
+      <template [ngIf]="lastMails" *ngFor="let mail of lastMails">
+        <a class="messages_item" routerLink="../chat/{{mail.id}}">
+          <div class="messages_icon">
+            <img src="{{mail.owner.avatar_url || '/assets/images/user_icon.png'}}" alt="">
+          </div>
+          <div class="messages_details"><span>{{ mail.created | date:"HH:mm"}}</span></div>
+          <div class="messages_info"><span>{{mail.owner.formatted_name}}</span>
+            <p>{{mail.text}}</p>
+          </div>
+        </a>
+      </template>
+    </div>
+  </div>
+</div>
+<app-messages-form #messageForm (messageCreated)="loadMailList()"></app-messages-form>

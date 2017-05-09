@@ -1,0 +1,38 @@
+<div class="registration_map_popup" [ngSwitch]="step">
+  <a [routerLink]="" [queryParams]="null" class="registration_map_popup_close"></a>
+  <ng-container *ngSwitchCase="1">
+    <p>Щоб створити сторінку вашої сусідської спільноти, спершу потрібно визначити межі вашого району — зареєструватися зможуть лише люди, які у ньому проживають.</p>
+    <p>Межі району можуть охоплювати:</p>
+    <ul>
+      <li>Будинки, що є частиною одного об’єднання мешканців.</li>
+      <li>Будинки, розташовані навколо одного парку або школи.</li>
+      <li>Будинки вашого житлового комплексу.</li>
+      <li>Будинки у межах офіційного району міста.</li>
+    </ul>
+    <p>Окреслена область має бути достатньо компактною, щоб сусідам було зручно ділитися інформацією — зазвичай вона буде включати від 50 до 1000  мешканців.</p>
+
+    <div class="registration_map_popup_links">
+      <a class="registration_next_link" [routerLink]="" [queryParams]="{ tips: 2 }">
+        Далі
+      </a>
+    </div>
+  </ng-container>
+
+  <ng-container *ngSwitchCase="2">
+    <div class="registration_map_popup_title">
+      <span>Як намалювати межі району?</span>
+    </div>
+    <div class="registration_map_popup_content">
+      <div class="registration_map_popup_wrapper">
+        <img src="/assets/images/video_bg.jpg" alt="dummy">
+      </div>
+    </div>
+    <p>Клацніть на мапі, щоб почати креслити межу. Кожен раз, коли ви клацнете на мапі, буде додано новий вузол межі.</p>
+    <div class="registration_map_popup_links">
+      <!-- <a [routerLink]="['/sign-up/border', {outlets: { primary: null, tips: null}}]"> -->
+      <a [routerLink]="" [queryParams]="null">
+        Почати
+      </a>
+    </div>
+  </ng-container>
+</div>

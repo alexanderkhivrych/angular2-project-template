@@ -1,0 +1,11 @@
+@mixin box-shadow($box-shadow-x, $box-shadow-y, $box-shadow-degradation, $box-shadow-color) {
+  box-shadow: $box-shadow-x $box-shadow-y $box-shadow-degradation $box-shadow-color;
+  -moz-box-shadow: $box-shadow-x $box-shadow-y $box-shadow-degradation $box-shadow-color;
+  -webkit-box-shadow: $box-shadow-x $box-shadow-y $box-shadow-degradation $box-shadow-color;
+}
+
+@mixin box-shadow-inset($box-shadow-x, $box-shadow-y, $box-shadow-degradation, $box-shadow-color) {
+  box-shadow: inset $box-shadow-x $box-shadow-y $box-shadow-degradation $box-shadow-color;
+  -moz-box-shadow: inset $box-shadow-x $box-shadow-y $box-shadow-degradation $box-shadow-color;
+  -webkit-box-shadow: inset $box-shadow-x $box-shadow-y $box-shadow-degradation $box-shadow-color;
+}

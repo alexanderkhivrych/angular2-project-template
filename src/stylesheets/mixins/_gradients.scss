@@ -1,0 +1,13 @@
+@mixin gradient-horizontal($bg-start, $bg-end) {
+  background: $bg-start;
+  background: -moz-linear-gradient(left, $bg-start 0%, $bg-end 100%);
+  background: -webkit-linear-gradient(left, $bg-start 0%, $bg-end 100%);
+  background: linear-gradient(to right, $bg-start 0%, $bg-end 100%);
+}
+
+@mixin gradient-vertical($bg-start, $bg-end) {
+  background: $bg-start;
+  background: -moz-linear-gradient(top, $bg-start 0%, $bg-end 100%);
+  background: -webkit-linear-gradient(top, $bg-start 0%, $bg-end 100%);
+  background: linear-gradient(to bottom, $bg-start 0%, $bg-end 100%);
+}

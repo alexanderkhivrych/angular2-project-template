@@ -1,0 +1,17 @@
+<div class="header_content">
+  <a class="logo" [routerLink]="['/']">
+    <img src="/assets/images/logo.png" alt="logo">
+  </a>
+  <div class="header_info" *ngIf="currentUser">
+    <a href="#" class="header_search"></a>
+    <a href="#" class="header_invite">Запросити</a>
+    <div class="header_user">
+      <div class="header_user_name">
+        <a href="#">{{currentUser.name}}</a>
+      </div>
+      <a href="#" class="header_user_icon">
+        <img [src]="currentUser.avatar_thumb" [alt]="currentUser.name">
+      </a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+<div class="wrapper">
+  <app-cabinet-header></app-cabinet-header>
+
+  <div class="container" [class.wide]="cabinetConfig.wideScreen">
+    <app-cabinet-sidebar *ngIf="!cabinetConfig.wideScreen"></app-cabinet-sidebar>
+
+    <div class="content">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,158 @@
+.advertisement {
+  background-color: #fff;
+}
+
+.advertisement_title {
+  overflow: hidden;
+  border-bottom: #F9FBFB 15px solid;
+  padding: 15px;
+
+  strong {
+    color: #1E3544;
+    float: left;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 29px;
+    margin-top: 5px;
+    max-width: 60%;
+  }
+
+  .button_create {
+    @include button('medium', 'green');
+    width: 174px;
+    float: right;
+  }
+
+  .filter_switchery {
+    float: right;
+    margin: 5px 30px 0 0;
+  }
+}
+
+.advertisement_filter {
+  padding: 15px;
+  overflow: hidden;
+}
+
+.advertisement_search {
+  width: 49%;
+  float: left;
+
+  .input {
+    background-image: url(/assets/images/search_silver_icon.png);
+    background-size: 16px;
+    background-position: 95% center;
+    background-repeat: no-repeat;
+    width: 100%;
+    padding-right: 35px;
+  }
+}
+
+.advertisement_category {
+  width: 49%;
+  float: right;
+
+  .select2-container {
+    min-width: 100%;
+    max-width: 100%;
+  }
+
+  .select2-container--default {
+
+    .select2-selection--single {
+      background-position: 96% 21px;
+      @include border-radius(2px);
+      height: 46px;
+
+      .select2-selection__rendered {
+        line-height: 44px;
+      }
+
+      .select2-selection__arrow {
+        height: 46px;
+      }
+    }
+  }
+}
+
+.advertisement_container {
+  padding: 0 15px;
+}
+
+.advertisement_item {
+  @include border-radius(2px);
+  border: #D2DADC 1px solid;
+  display: inline-block;
+  vertical-align: top;
+  width: 213px;
+  margin: 0 12px 14px 0;
+
+  &:nth-child(3n) {
+    margin-right: 0;
+  }
+}
+
+.advertisement_item_photo {
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+.advertisement_item_info {
+  padding: 10px 8px 9px 8px;
+
+  a {
+    color: #1E3544;
+    line-height: 20px;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  p {
+
+    + p {
+      margin-top: 8px;
+
+      a {
+        color: #4F8ED6;
+      }
+    }
+  }
+}
+
+.advertisement_item_details {
+  padding: 0 8px 8px 8px;
+  overflow: hidden;
+}
+
+.advertisement_item_date {
+  color: #CCD2D1;
+  float: left;
+  font-size: 10px;
+  line-height: 13px;
+  margin-top: 4px;
+}
+
+.advertisement_comment_link {
+  background: url(/assets/images/comment_icon.png) no-repeat;
+  background-size: 17px;
+  color: #AFB3B8;
+  float: right;
+  padding-left: 20px;
+  text-decoration: none;
+}
+
+.advertisement_like_link {
+  background: url(/assets/images/like_icon.png) no-repeat;
+  background-size: 17px;
+  color: #AFB3B8;
+  float: right;
+  padding-left: 20px;
+  text-decoration: none;
+  margin: 0 0 0 14px;
+}

@@ -1,0 +1,121 @@
+.post_recommend {
+  @include border-radius(2px);
+  background-color: #fff;
+  padding: 8px 15px;
+  margin-top: 12px;
+
+  .slick-track {
+    margin-left: -230px !important;
+  }
+
+  .slick-list {
+
+    &:after {
+      @include gradient-horizontal(rgba(#FFFFFF, .05), #fff);
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 83px;
+      height: 100%;
+    }
+  }
+
+  .slick-prev {
+    position: absolute;
+    left: -10px;
+    top: 50%;
+    margin-top: -10px;
+    z-index: 1;
+  }
+
+  .slick-next {
+    position: absolute;
+    right: -10px;
+    top: 50%;
+    margin-top: -10px;
+    z-index: 1;
+  }
+}
+
+.post_recommend_title {
+  background: url(/assets/images/recommend_title_icon.png) left center no-repeat;
+  background-size: 70px;
+  padding-left: 100px;
+  padding: 20px 0 20px 90px;
+  margin-bottom: 6px;
+
+  strong {
+    color: #2D363B;
+    display: block;
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 2px;
+  }
+
+  p {
+    color: #41494F;
+    line-height: 19px;
+  }
+}
+
+.post_recommend_item {
+  @include border-radius(2px);
+  border: #D2DADC 1px solid;
+  display: inline-block;
+  vertical-align: top;
+  width: 200px;
+  padding-bottom: 8px;
+  margin-right: 10px;
+}
+
+.post_recommend_photo {
+  width: 75px;
+  height: 75px;
+  margin: -37.5px auto 0;
+
+  img {
+    @include border-radius(100%);
+    max-width: 100%;
+    height: auto;
+    max-height: 75px;
+  }
+}
+
+.post_recommend_info {
+  padding: 14px 10px;
+
+  span {
+    color: #1E3544;
+    display: block;
+    line-height: 20px;
+    margin-bottom: 8px;
+  }
+
+  p {
+    color: rgba(#1E3544, .4);
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.post_recommend_data {
+  overflow: hidden;
+  padding: 0 17px 0 10px;
+
+  span {
+    color: #CCD2D1;
+    font-size: 10px;
+    float: left;
+    line-height: 13px;
+  }
+
+  a {
+    color: #26B6A1;
+    float: right;
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: none;
+    margin-top: -2px;
+  }
+}

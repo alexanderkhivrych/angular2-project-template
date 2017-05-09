@@ -1,0 +1,21 @@
+<div class="user_profile">
+
+  <div class="user_profile_title">
+    <div class="user_profile_location"><img src="/assets/images/recommendation_map.jpg" alt="recommendation_map"></div>
+    <div class="user_profile_about">
+      <div class="user_profile_photo">
+        <img [src]="profile.avatar || '/assets/images/user_photo.png'" alt="user_photo">
+      </div>
+      <div class="user_profile_info"><strong>{{profile.first_name}} {{profile.last_name}}</strong>
+        <p>{{profile.addres}}</p>
+      </div>
+
+      <div class="user_profile_action">
+        <a [routerLink]="['../settings']" class="button button_message">Редагувати</a>
+        <!-- <a href="#" class="button button_message">повідомлення</a> -->
+      </div>
+
+    </div>
+  </div>
+
+</div>

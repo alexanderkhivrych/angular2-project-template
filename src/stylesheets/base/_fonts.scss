@@ -1,0 +1,18 @@
+@import '../mixins/_fonts';
+
+@include font-face('Museo', 'museosans_900', 'Museo', 900, normal, 'sans-serif');
+@include font-face('Museo', 'museosans_700', 'Museo', 700, normal, 'sans-serif');
+@include font-face('Museo', 'museosans_500', 'Museo', 500, normal, 'sans-serif');
+@include font-face('Museo', 'museosans-300', 'Museo', 300, normal, 'sans-serif');
+
+@include font-face-cabinet('Effra', 'Effra-Regular', 'Effra', 400, normal, 'sans-serif');
+@include font-face-cabinet('Effra', 'Effra-Italic', 'Effra', 400, italic, 'sans-serif');
+@include font-face-cabinet('Effra', 'Effra-Medium', 'Effra', 500, normal, 'sans-serif');
+@include font-face-cabinet('Effra', 'Effra-Bold', 'Effra', 700, normal, 'sans-serif');
+
+@include font-face-cabinet('Montserrat', 'Montserrat-Bold', 'Montserrat', 700, normal, 'sans-serif');
+@include font-face-cabinet('Montserrat', 'Montserrat-Regular', 'Montserrat', 400, normal, 'sans-serif');
+
+@include font-face-cabinet('order_form', 'order_form', 'order_form', 500, normal, 'sans-serif');
+
+@include font-face-cabinet('cabinet', 'cabinet', 'cabinet', 500, normal, 'sans-serif');

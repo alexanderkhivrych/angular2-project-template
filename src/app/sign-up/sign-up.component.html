@@ -1,0 +1,37 @@
+<div class="header">
+  <app-shared-header></app-shared-header>
+</div>
+<div class="container">
+  <!-- sign-up popups will be rendered here -->
+  <app-invite-form-popup>
+    <!-- sign-up by invite popup -->
+  </app-invite-form-popup>
+
+  <div class="registration">
+    <div class="registration_steps">
+      <ul>
+        <li class="active"><a href="#"><span>1</span><strong>Реєстрація</strong></a></li>
+        <li><a href="#"><span>2</span><strong>Гайда знайомитись!</strong></a></li>
+        <li><a href="#"><span>3</span><strong>Запросіть сусідів</strong></a></li>
+      </ul>
+    </div>
+    <div class="registration_container">
+      <!-- registration form will be here -->
+      <router-outlet></router-outlet>
+      <router-outlet name="form"></router-outlet>
+    </div>
+    <div class="registration_footer">
+      <div class="registration_privacy">
+        <p>
+
+          З нами ваша <a [routerLink]="['/privacy']">інформація у безпеці.</a>
+        </p>
+      </div>
+      <div class="registration_not_address">
+        <p>
+          Не можете знайти свою адресу? <a href="#">Клацніть сюди.</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

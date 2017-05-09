@@ -1,0 +1,547 @@
+.input {
+  @include border-radius(2px);
+  border: rgba(#C7D3D6, .9) 1px solid;
+  outline: none;
+  font-family: 'Roboto', sans-serif;
+  color: #41494F;
+  font-size: 14px;
+  height: 46px;
+  padding: 0 10px;
+
+  &::-webkit-input-placeholder {
+    color: #738190;
+  }
+  &::-moz-placeholder {
+    color: #738190;
+  }
+  &:-moz-placeholder {
+    color: #738190;
+  }
+  &:-ms-input-placeholder {
+    color: #738190;
+  }
+
+  &[disabled="disabled"] {
+    background-color: #F6F9F9;
+
+    &::-webkit-input-placeholder {
+      color: rgba(#738190, .3);
+    }
+    &::-moz-placeholder {
+      color: rgba(#738190, .3);
+    }
+    &:-moz-placeholder {
+      color: rgba(#738190, .3);
+    }
+    &:-ms-input-placeholder {
+      color: rgba(#738190, .3);
+    }
+  }
+}
+
+.textarea {
+  @include border-radius(2px);
+  border: rgba(#C7D3D6, .9) 1px solid;
+  outline: none;
+  resize: none;
+  font-family: 'Roboto', sans-serif;
+  color: #41494F;
+  font-size: 14px;
+  padding: 10px;
+
+  &::-webkit-input-placeholder {
+    color: #738190;
+  }
+  &::-moz-placeholder {
+    color: #738190;
+  }
+  &:-moz-placeholder {
+    color: #738190;
+  }
+  &:-ms-input-placeholder {
+    color: #738190;
+  }
+}
+
+
+.field_item {
+
+  &.field_error {
+
+    .select2-container {
+
+      .select2-selection {
+        border-color: rgba(#F07676, .9) !important;
+      }
+
+      .select2-selection__rendered {
+        background: url(/assets/images/notification_icon.png) right 10px no-repeat;
+        background-size: 21px;
+      }
+
+      + .field_error_text {
+        right: 44px !important;
+      }
+    }
+
+    .input {
+      border-color: rgba(#F07676, .9) !important;
+      background: url(/assets/images/notification_icon.png) 98% center no-repeat;
+      background-size: 21px;
+    }
+
+    .textarea {
+      border-color: rgba(#F07676, .9) !important;
+      background: url(/assets/images/notification_icon.png) 98% 12px no-repeat;
+      background-size: 21px;
+    }
+
+    .field_error_text {
+      @include box-shadow(0, 4px, 12px, rgba(#9FD0C0, .21));
+      background-color: #fff;
+      color: #EE6767;
+      padding: 8px 10px;
+      font-size: 12px;
+      position: absolute;
+      top: -8px;
+      right: 24px;
+    }
+  }
+
+  &.field_done {
+
+    .input {
+      background: url(/assets/images/done_icon.png) 97% center no-repeat;
+      background-size: 12px;
+    }
+  }
+}
+
+
+.uploader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  border: 0;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  direction: ltr;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+}
+
+.field_tooltip {
+  background: url(/assets/images/tooltip_icon.png) no-repeat;
+  background-size: 16px;
+  display: inline-block;
+  vertical-align: middle;
+  width: 16px;
+  height: 16px;
+}
+
+
+.form_title {
+  display: inline-block;
+  vertical-align: top;
+  width: 100%;
+  margin-bottom: 14px;
+
+  span {
+    color: #1E3544;
+    float: left;
+    font-size: 22px;
+    font-weight: 500;
+    margin-top: 3px;
+  }
+
+  .button {
+    @include button('medium', 'green');
+    width: 131px;
+    float: right;
+  }
+}
+
+.form {
+  @include border-radius(2px);
+  background-color: #fff;
+  overflow: hidden;
+  padding: 14px 15px 4px 15px;
+
+  .field_item {
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+    margin-bottom: 15px;
+
+    .select2-container {
+      min-width: 100%;
+      max-width: 100%;
+    }
+
+    .select2-container--default,
+    .select2-container--multiple-theme {
+
+      .select2-selection--single {
+        @include border-radius(2px);
+      }
+    }
+
+    &.drop {
+
+      .field_item_title {
+        @include border-radius(2px 2px 0 0);
+
+        span {
+          background: url(/assets/images/link_up_arrow.png) right center no-repeat;
+          background-size: 8px;
+        }
+      }
+
+      .field_drop_content {
+        @include border-radius(0 0 2px 2px);
+        display: block;
+      }
+    }
+
+    &.field_date {
+
+      .field_date_item {
+        width: 48%;
+        float: left;
+        position: relative;
+
+        + .field_date_item {
+          float: right;
+        }
+
+        .ui-datepicker-trigger {
+          width: 14px;
+          position: absolute;
+          top: 14px;
+          right: 12px;
+        }
+      }
+    }
+
+    &.field_upload {
+      margin-bottom: 20px;
+
+      .field_item_section {
+        @include border-radius(2px);
+        overflow: hidden;
+        height: 200px;
+      }
+
+      .field_upload_wrapper {
+        border: rgba(#C7D3D6, .9) 1px solid;
+        width: 100%;
+        height: 100%;
+      }
+
+      .field_cover {
+        width: 100%;
+        height: 100%;
+        position: relative;
+
+        img {
+          max-width: 100%;
+          // position: relative;
+          // z-index: 1;
+        }
+      }
+
+      .cover_delete_link {
+        background: url(/assets/images/delete_icon.png) no-repeat;
+        background-size: 30px;
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+      }
+    }
+
+    &.field_agree {
+
+      > label {
+        line-height: 20px;
+      }
+
+      .checker {
+        position: relative;
+        top: -2px;
+        margin-right: 22px;
+      }
+
+      .field_tooltip {
+        margin-left: 5px;
+      }
+
+      .field_item_section {
+
+        label {
+          color: rgba(#1E3544, .6);
+        }
+      }
+    }
+
+    &.field_links {
+
+      a {
+
+        &:not(.button) {
+          color: #26B6A1;
+          float: right;
+          font-size: 12px;
+          font-weight: 700;
+          text-decoration: none;
+          margin: 10px 30px 0 0;
+        }
+      }
+
+      .button_send {
+        @include button('medium', 'green');
+        width: 131px;
+        float: right;
+      }
+    }
+
+    &.field_price {
+
+      .input {
+        width: 150px;
+        display: inline-block;
+        vertical-align: top;
+        margin-right: 12px;
+      }
+
+      .select2-container {
+        min-width: 100px;
+        max-width: 100px;
+        margin-right: 12px;
+      }
+
+      .select2-container--default {
+
+        .select2-selection--single {
+          background-position: 88% 18px;
+        }
+      }
+
+      .field_price_checkbox {
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 12px;
+
+        > label {
+          display: inline-block;
+          vertical-align: middle;
+          margin-left: 5px;
+        }
+      }
+    }
+
+    > label {
+      color: #3A3C49;
+      font-weight: 500;
+      line-height: 19px;
+      width: 145px;
+      float: left;
+      line-height: 42px;
+    }
+
+    .field_item_section {
+      overflow: hidden;
+    }
+
+    .field_item_title {
+      @include border-radius(2px);
+      border: rgba(#C7D3D6, .9) 1px solid;
+      line-height: 42px;
+      height: 42px;
+      padding: 0 15px;
+
+      span {
+        background: url(/assets/images/link_down_arrow.png) right center no-repeat;
+        background-size: 8px;
+        color: #738190;
+        display: block;
+      }
+    }
+
+    .field_drop_content {
+      border: rgba(199, 211, 214, 0.9) 1px solid;
+      overflow: hidden;
+      display: none;
+      margin-top: -1px;
+      padding: 14px 15px 5px 15px;
+    }
+
+    .field_item_content {
+      overflow: hidden;
+    }
+
+    .field_subitem_section {
+      float: left;
+      margin-right: 20px;
+
+      > span {
+        color: #26B6A1;
+        display: block;
+        font-size: 12px;
+        font-weight: 700;
+        padding-left: 20px;
+        margin-bottom: 13px;
+      }
+
+      &:first-child {
+
+        > span {
+          background: url(/assets/images/location_icon.png) left top no-repeat;
+          background-size: 10px;
+        }
+      }
+
+      &:nth-child(2) {
+
+        > span {
+          background: url(/assets/images/group_icon.png) left top no-repeat;
+          background-size: 13px;
+        }
+      }
+    }
+
+    .field_subitem {
+      margin-bottom: 10px;
+
+      > label {
+        color: #738190;
+        font-size: 13px;
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 2px;
+      }
+    }
+
+    .input {
+      width: 100%;
+      height: 42px;
+      padding: 0 15px;
+    }
+
+    .textarea {
+      width: 100%;
+      height: 130px;
+      padding: 12px 15px;
+    }
+
+    .field_upload_links {
+      background: url(/assets/images/upload_bg_icon.png) center top no-repeat;
+      background-size: 61px;
+      text-align: center;
+      padding-top: 78px;
+      margin-top: 62px;
+
+      .uploader_button {
+        display: inline-block;
+        vertical-align: top;
+        position: relative;
+        width: 189px;
+        margin: 0 10px;
+
+        .uploader {
+          display: none;
+        }
+
+        .button_upload {
+          @include button('medium', 'green');
+          width: 100%;
+        }
+      }
+
+      .button_choice {
+        @include button('medium', 'silver');
+        display: inline-block;
+        vertical-align: top;
+        width: 171px;
+        margin: 0 10px;
+      }
+    }
+
+    .field_photo_upload_main {
+      background: url(/assets/images/upload_bg_icon.png) center center no-repeat;
+      background-size: 60px;
+      @include border-radius(2px);
+      border: #C7D3D6 1px solid;
+      float: left;
+      width: 250px;
+      height: 250px;
+      position: relative;
+
+      .field_upload_wrapper {
+
+        > span {
+          color: #AFB3B8;
+          line-height: 19px;
+          position: absolute;
+          top: 14px;
+          left: 14px;
+        }
+      }
+
+      .uploader_button {
+        position: relative;
+        width: 189px;
+        height: 34px;
+        margin: 190px auto 0;
+
+        .button_upload {
+          @include button('medium', 'green');
+        }
+      }
+    }
+
+    .field_photo_upload_content {
+      width: 260px;
+      float: right;
+
+      .uploader_button {
+        width: 212px;
+        height: 34px;
+        margin: 10px auto 0;
+        position: relative;
+
+        .button_upload {
+          @include button('medium', 'silver');
+        }
+      }
+    }
+
+    .field_photo_upload_section {
+      display: inline-block;
+      vertical-align: top;
+      width: 100%;
+    }
+
+    .field_photo_upload_item {
+      @include border-radius(2px);
+      background: url(/assets/images/upload_bg_icon.png) center center no-repeat;
+      background-size: 30px;
+      border: #C7D3D6 1px solid;
+      width: 80px;
+      height: 80px;
+      float: left;
+      margin: 0 10px 10px 0;
+
+      &:nth-child(3n) {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.uploader_button {
+  position: relative;
+}

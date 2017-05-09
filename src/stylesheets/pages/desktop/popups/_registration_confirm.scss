@@ -1,0 +1,67 @@
+.popup {
+
+  &.popup_registration_confirm {
+    width: 520px;
+    padding: 25px;
+
+    .popup_title {
+      margin-bottom: 12px;
+
+      span {
+        color: #2D363B;
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 24px;
+      }
+    }
+
+    .field_item {
+      margin-bottom: 17px;
+
+      .select2-container {
+        min-width: 100%;
+        max-width: 100%;
+      }
+
+      .input {
+        width: 100%;
+        height: 42px;
+      }
+
+      p  {
+        background: url(/assets/images/lock_icon.png) left center no-repeat;
+        background-size: 21px;
+        color: #88939D;
+        font-size: 12px;
+        line-height: 21px;
+        padding-left: 30px;
+
+        a {
+          color: #4C87CD;
+          text-decoration: none;
+        }
+      }
+    }
+
+    .field_buttons {
+      text-align: right;
+
+      a {
+        color: #26B6A1;
+        font-weight: bold;
+        font-size: 12px;
+        display: inline-block;
+        vertical-align: middle;
+        text-decoration: none;
+      }
+
+      .button {
+        @include button('medium', 'green');
+        display: inline-block;
+        vertical-align: middle;
+        width: 108px;
+        margin-left: 26px;
+      }
+    }
+  }
+}

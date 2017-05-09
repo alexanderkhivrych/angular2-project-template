@@ -1,0 +1,121 @@
+@mixin rating($star-width, $star-height, $star-margin, $rating-image) {
+  div {
+    &.star {
+      &-rating {
+        width: $star-width;
+        height: $star-height;
+        background: url($rating-image) no-repeat 0 0;
+        background-size: $star-width;
+        cursor: pointer;
+        display: inline-block;
+        vertical-align: top;
+        width: $star-width;
+        height: $star-height;
+        text-indent: -999em;
+        overflow: hidden;
+        margin: 0 $star-margin 0 $star-margin;
+        background: transparent !important;
+        a {
+          width: $star-width;
+          height: 100%;
+          background: url($rating-image) no-repeat 0 top;
+          background-size: $star-width;
+          border: 0;
+          display: block;
+        }
+        &-on {
+          a {
+            background-position: 0 bottom !important;
+          }
+        }
+        &-hover {
+          a {
+            background-position: 0 bottom;
+          }
+        }
+        &-readonly {
+          a {
+            cursor: default !important;
+          }
+        }
+      }
+    }
+    .rating-cancel {
+      display: none !important;
+      width: 0px;
+      height: 0px;
+      a {
+        display: block;
+        width: $star-width;
+        height: $star-height;
+        background-position: 0 0;
+        border: 0;
+      }
+      & + .star-rating {
+        margin: 0 $star-margin 0 0;
+      }
+    }
+  }
+}
+
+
+
+
+@mixin rating-resize($star-width, $star-height, $star-margin) {
+  div {
+    &.star {
+      &-rating {
+        background-size: $star-width;
+        width: $star-width;
+        height: $star-height;
+        margin: 0 $star-margin 0 $star-margin;
+        a {
+          background-size: $star-width;
+        }
+        &-on {
+          a {
+            background-position: 0 bottom !important;
+          }
+        }
+        &-hover {
+          a {
+            background-position: 0 bottom;
+          }
+        }
+      }
+    }
+    .rating-cancel {
+      & + .star-rating {
+        margin: 0 $star-margin 0 0;
+      }
+    }
+  }
+}
+
+@mixin rating-dynamic($star-width, $star-height, $star-margin, $rating-image) {
+
+  .ng-rating {
+    background: url($rating-image) no-repeat 0 0;
+    background-size: $star-width;
+    display: inline-block;
+    vertical-align: top;
+    width: $star-width;
+    height: $star-height;
+
+    &.filled {
+      background-position: 0 bottom;
+    }
+
+    &[type="radio"] {
+      border: 0;
+      clip: rect(0 0 0 0);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      width: 1px;
+    }
+  }
+
+}

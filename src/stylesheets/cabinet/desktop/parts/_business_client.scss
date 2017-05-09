@@ -1,0 +1,49 @@
+.business_client {
+  background-color: #fff;
+  padding: 20px 15px;
+}
+
+.business_client_title {
+  margin-bottom: 13px;
+}
+
+.business_client_content {
+  
+  .field_item {
+    margin-bottom: 15px;
+
+    > label {
+      color: #3A3C49;
+      float: left;
+      font-weight: 500;
+      line-height: 19px;
+      margin-top: 12px;
+      width: 145px;
+    }
+
+    .field_item_content {
+      overflow: hidden;
+    }
+
+    .input {
+      width: 100%;
+      height: 42px;
+    }
+
+    .textarea {
+      width: 100%;
+      height: 130px;
+    }
+  }
+
+  &.business_client_content_service {
+
+    .field_item {
+
+      > label {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+    }
+  }
+}

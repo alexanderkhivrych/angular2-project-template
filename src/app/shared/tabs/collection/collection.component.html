@@ -1,0 +1,12 @@
+<div [class]="headingCss">
+  <ul>
+    <li *ngFor="let tab of tabs" [class.active]="tab.selected" [ngSwitch]="tab.disabled">
+      <span [innerHTML]="tab.title" *ngSwitchCase="true"></span>
+      <a href="" (click)="selectItem($event, tab)" [innerHTML]="tab.title" *ngSwitchDefault></a>
+    </li>
+  </ul>
+</div>
+
+<div [class]="contentCss">
+  <ng-content></ng-content>
+</div>

@@ -1,0 +1,78 @@
+<form #f="ngForm" name="form" (ngSubmit)="save(f.form)" [check-error]="f" [server]="errors" action="" novalidate>
+  <div class="registration_content">
+    <div class="registration_title">
+      <h2 *ngIf="borderName">Чудово! Ваш район — {{borderName}}</h2>
+      <p> <span>Тепер зареєструйтеся. </span>Це безкоштовно!</p>
+    </div>
+    <div class="registration_form">
+      <div class="field_item field_name" display-error [check]="first_name">
+        <input type="text" placeholder="Ім’я" class="input"
+               autocorrect="off" autocapitalize="off" spellcheck="off"
+               name="first_name" [(ngModel)]="model.first_name" #first_name="ngModel" required
+        />
+      </div>
+      <div class="field_item field_name" display-error [check]="last_name">
+        <input type="text" placeholder="Прізвище" class="input"
+               autocorrect="off" autocapitalize="off" spellcheck="off"
+               name="last_name" [(ngModel)]="model.last_name" #last_name="ngModel" required
+        />
+      </div>
+      <div class="field_item field_gender">
+        <div class="field_gender_item" *ngFor="let gender_type of gender_types.all">
+          <div class="radio">
+            <span [class.checked]="model.gender == gender_type.id">
+              <input type="radio" name="gender" [value]="gender_type.id"
+                     [id]="'gender_type_' + gender_type.id"
+                     [(ngModel)]="model.gender" #gender="ngModel"
+              />
+            </span>
+          </div>
+          <label [for]="'gender_type_' + gender_type.id">{{gender_type.title}}</label>
+        </div>
+      </div>
+      <div class="field_item field_social">
+        <p>Або долучайтеся через соціальні мережі</p>
+        <a href="#" class="field_social_vk"></a>
+        <a href="#" class="field_social_facebook"></a>
+      </div>
+      <div class="field_buttons">
+        <input type="submit" value="Зареєструватися" class="button">
+      </div>
+    </div>
+  </div>
+  <div class="registration_map">
+    <div class="registration_map_container">
+      <ng2-map [zoom]="zoom" *ngIf="locationPoint"
+               center="{{locationPoint.lat}}, {{locationPoint.lng}}"
+               streetViewControl="false"
+               (mapReady$)="onMapInit($event)">
+        <marker *ngIf="locationPoint" [position]="locationPoint">
+        </marker>
+
+        <polygon *ngIf="housePolygon"
+          [editable]="false"
+          [paths]="housePolygon.path"
+          [strokeColor]="'#FFC107'"
+          [strokeOpacity]="0.8"
+          [strokeWeight]="2"
+          [fillColor]="'#FFC107'"
+          [fillOpacity]="0.4">
+        </polygon>
+
+        <polygon *ngIf="borderPolygon"
+          [editable]="false"
+          [paths]="borderPolygon.path"
+          [strokeColor]="'#26b6a1'"
+          [strokeOpacity]="0.8"
+          [strokeWeight]="2"
+          [fillColor]="'#26b6a1'"
+          [fillOpacity]="0.4">
+        </polygon>
+      </ng2-map>
+    </div>
+
+    <div class="registration_map_links">
+      <a  [routerLink]="['../border']">Я не згоден з границями району</a>
+    </div>
+  </div>
+</form>

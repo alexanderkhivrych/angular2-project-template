@@ -1,0 +1,29 @@
+<div class="popup_overlay" [hidden]="!isVisible">
+  <div class="popup popup_registration_confirm">
+    <a [routerLink]="" [fragment]='null' class="popup_close"></a>
+    <div class="popup_title">
+      <span>Моментальна перевірка по рахунку на сплату комунальних послуг</span>
+    </div>
+    <div class="popup_content">
+      <form>
+        <div class="field_item">
+          <ng-select placeholder="Виберіть провайдера послуги"
+                     [options]="services">
+          </ng-select>
+        </div>
+        <div class="field_item">
+          <input type="text" placeholder="Вкажіть номер рахунку" class="input">
+        </div>
+        <div class="field_item">
+          <p>
+            Ваша інформація <a [routerLink]="['/privacy']">захищена і конфіденційна.</a>
+          </p>
+        </div>
+        <div class="field_buttons">
+          <a [routerLink]="" [fragment]='null'>Відмінити</a>
+          <input type="submit" value="НАДІСЛАТИ" class="button">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

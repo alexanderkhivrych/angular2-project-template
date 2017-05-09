@@ -1,0 +1,73 @@
+.business_tests {
+  background-color: #fff;
+  padding: 19px 15px;
+}
+
+.business_tests_title {
+  text-align: center;
+  margin-bottom: 15px;
+
+  h2 {
+    color: #1E3544;
+    font-size: 22px;
+    line-height: 29px;
+    margin-bottom: 6px;
+  }
+
+  p {
+    color: #41494F;
+    line-height: 20px;
+  }
+}
+
+.business_tests_progress {
+  @include border-radius(5px);
+  background-color: rgba(#6FCDBC, .2);
+  overflow: hidden;
+  margin: 15px auto 0;
+  width: 298px;
+  height: 5px;
+  position: relative;
+
+  span {
+    @include border-radius(5px);
+    background-color: #26B6A1;
+    display: block;
+    height: 100%;
+    min-width: 1%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+.business_tests_content {
+  @include border-radius(2px);
+  border: #DDE8EB 2px solid;
+  height: 265px;
+}
+
+.business_test_item {
+  border-bottom: rgba(#D2DADC, .4) 1px solid;
+  padding: 11px 13px;
+
+  .checker {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  label {
+    color: #738190;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 6px;
+  }
+}
+
+.business_tests_add_answer {
+  margin-top: 15px;
+
+  .input {
+    width: 100%;
+  }
+}

@@ -1,0 +1,5 @@
+@mixin transition($transition-property, $transition-duraction, $transition-timing-function) {
+  transition: $transition-property $transition-duraction $transition-timing-function;
+  -moz-transition: $transition-property $transition-duraction $transition-timing-function;
+  -webkit-transition: $transition-property $transition-duraction $transition-timing-function;
+}

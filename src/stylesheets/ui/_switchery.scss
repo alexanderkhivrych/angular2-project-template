@@ -1,0 +1,92 @@
+/*
+ *
+ * Main stylesheet for Switchery.
+ * http://abpetkov.github.io/switchery/
+ *
+ */
+
+/* Switchery defaults. */
+
+.switchery {
+  background-color: #D0D6DA;
+  border-radius: 8px;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  margin: 0 9px;
+
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+
+  -webkit-background-clip: content-box;
+  background-clip: content-box;
+  position: relative;
+  top: 1px;
+}
+
+.switchery > small {
+  background: #fff;
+  border-radius: 100%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  height: 30px;
+  position: absolute;
+  top: 0;
+  width: 30px;
+}
+
+/* Switchery sizes. */
+
+.switchery-small {
+  background-color: #D0D6DA !important;
+  border-radius: 8px;
+  height: 8px;
+  width: 28px;
+}
+
+.switchery-small > small {
+  box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  background-color: #26B6A1 !important;
+  height: 14px;
+  width: 14px;
+  top: -3.5px;
+}
+
+.switchery-large {
+  border-radius: 40px;
+  height: 40px;
+  width: 66px;
+}
+
+.switchery-large > small {
+  height: 40px;
+  width: 40px;
+}
+
+
+.filter_switchery_blocks {
+  background: url(/assets/images/filter_blocks_icon.png) center center no-repeat;
+  background-size: 16px;
+  display: inline-block;
+  vertical-align: middle;
+  width: 17px;
+  height: 17px;
+}
+
+.filter_switchery_list {
+  background: url(/assets/images/filter_list_icon.png) center center no-repeat;
+  background-size: 16px;
+  display: inline-block;
+  vertical-align: middle;
+  width: 17px;
+  height: 17px;
+}

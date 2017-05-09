@@ -1,0 +1,48 @@
+<form #f="ngForm" name="form" (ngSubmit)="$event.preventDefault() && save(f.form)"
+      [check-error]="f" [server]="errors" novalidate>
+  <div class="registration_info">
+    <h3>Важливо, щоб обрана вами назва була знайомою вашим сусідам.</h3>
+    <p>Кілька порад:</p>
+    <ul>
+      <li>Використовуйте офіціальну назву вашої громади або придумайте власну, взявши за основу назву парку або місцевої пам’ятки.</li>
+      <li>Уникайте використання назви вашого міста, області, а також таких слів як «сусіди», «район», «місцевість», «об’єднання мешканців» або «друзі».</li>
+      <li>Також, назва повинна починатися з великої літери (яка ставиться лише на її початку, за виключенням ситуації, коли назва є абревіатурою).</li>
+    </ul>
+    <div class="field_item" display-error [check]="name"  accept-error="default detail polygon">
+      <input type="text" placeholder="Назава району" class="input"
+             name="name" [(ngModel)]="model.name" #name="ngModel"
+             required maxlength="150"
+      />
+    </div>
+<!--
+    <div class="field_item">
+      <input type="submit" (click)="checkName()" value="Перевірити">
+    </div>
+ -->
+  </div>
+
+  <div class="registration_map">
+    <div class="registration_map_container">
+      <ng2-map [zoom]="zoom" *ngIf="mapPosition"
+               center="{{mapPosition.lat}}, {{mapPosition.lng}}"
+               streetViewControl="false">
+        <marker *ngIf="locationPoint" [position]="locationPoint">
+        </marker>
+
+        <polygon [editable]="false"
+          *ngIf="borderPolygon"
+          [paths]="borderPolygon.path"
+          [strokeColor]="'#26b6a1'"
+          [strokeOpacity]="0.8"
+          [strokeWeight]="2"
+          [fillColor]="'#26b6a1'"
+          [fillOpacity]="0.4">
+        </polygon>
+      </ng2-map>
+    </div>
+    <div class="registration_map_links">
+      <a href="javascript:void(0);" (click)="submit(f)" class="button">Завершити</a>
+      <a [routerLink]="['../draw']">Намалювати інші межі</a>
+    </div>
+  </div>
+</form>

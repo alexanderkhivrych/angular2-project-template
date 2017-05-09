@@ -1,0 +1,131 @@
+<form #f="ngForm" name="form" (ngSubmit)="$event.preventDefault() && save(f.form)"
+      [check-error]="f" [server]="errors" action="" novalidate>
+  <div class="registration_content">
+    <div class="registration_title">
+      <h2>Вітаємо! Будь ласка, вкажіть вашу адресу.</h2>
+      <p>
+        <span>Навіщо це нам? </span>
+        Щоб забезпечити конфіденційність сусідів, нам потрібна підтверджена адреса або
+        <a [routerLink]="['', { outlets: { popup: ['by-invite'] } }]">введіть код запрошення.</a>
+      </p>
+    </div>
+    <div class="registration_form">
+      <div class="field_item field_address" display-error [check]="address">
+        <input type="text" placeholder="Вкажіть адресу" class="input"
+               [disabled]="locationPending || (state > STATES.DEFAULT)"
+               autocorrect="off" autocapitalize="off" spellcheck="off" autocomplete="street-address"
+               name="address" [(ngModel)]="model.address" #address="ngModel" required #search_address
+        />
+      </div>
+      <div class="field_item field_address_details">
+        <div class="field_address_details_item" display-error [check]="house">
+          <input type="text" placeholder="Вкажіть № будинку" class="input"
+                 [disabled]="locationPending || (state > STATES.DEFAULT)"
+                 name="street_number" [(ngModel)]="model.house" #house="ngModel" required
+                 (focusout)="updateLocationSearch()" (keyup.enter)="updateLocationSearch()"
+          >
+        </div>
+        <div class="field_address_details_item" display-error [check]="apartment" [immediate]="model.private_house && 'valid'">
+          <input type="text" placeholder="Вкажіть квартиру" class="input" name="apartment"
+                 [(ngModel)]="model.apartment" #apartment="ngModel"
+                 [disabled]="model.private_house || (state > STATES.DEFAULT)"
+                 [required]="!model.private_house"
+          />
+        </div>
+      </div>
+      <div class="field_item field_address_privat">
+        <div class="checker">
+          <span [ngClass]="{ 'checked': model.private_house }">
+            <input type="checkbox" name="private_house" id="is_private_house"
+                   [(ngModel)]="model.private_house" [disabled]="state > STATES.DEFAULT"
+            />
+          </span>
+        </div>
+        <label for="is_private_house">Приватний будинок</label>
+      </div>
+
+      <div class="field_item" display-error [check]="email" accept-error="default detail">
+        <input type="email" placeholder="Вкажіть вашу електронну скриньку" class="input"
+               name="email" [(ngModel)]="model.email" #email="ngModel"
+               required email maxlength="150" [disabled]="state > STATES.DEFAULT"
+        />
+      </div>
+
+      <div class="field_item field_password" display-error [check]="password">
+        <input type="password" placeholder="Пароль" class="input"
+               name="password" [(ngModel)]="model.password" #password="ngModel"
+               required minlength="6" maxlength="128" [disabled]="state > STATES.DEFAULT"
+               (focus)="pass_tips_shown=true" (focusout)="pass_tips_shown=false"
+        />
+        <sign-up-password-rate [password]="model.password" [show]="pass_tips_shown"></sign-up-password-rate>
+      </div>
+      <div class="field_item field_password" display-error [check]="password_confirmation" immediate="not-focused">
+        <input type="password" placeholder="Повторити пароль" class="input" [disabled]="state > STATES.DEFAULT"
+               name="password_confirmation" [(ngModel)]="model.password_confirmation" [confirmation]="password"
+               #password_confirmation="ngModel" required minlength="6" maxlength="128"
+        />
+      </div>
+
+      <div class="field_buttons">
+        <input type="submit" value="Продовжити" class="button"
+               [disabled]="loading || (state == STATES.HOUSE_SETUP)"
+               (click)="save($event, f.form)">
+      </div>
+    </div>
+  </div>
+  <div class="registration_map">
+    <app-address-tips>
+      <!-- tips -->
+    </app-address-tips>
+
+    <div class="registration_map_container">
+      <ng2-map [zoom]="zoom || 12"
+               center="{{latitude || 50.4509591}}, {{longitude || 30.52260179999996}}"
+               streetViewControl="false"
+               (mapReady$)="onMapInit($event)">
+        <marker *ngIf="locationPoint" [position]="locationPoint" draggable="true"
+                (dragend)="onMarkerDragged($event)">
+        </marker>
+
+        <drawing-manager *ngIf="state == STATES.HOUSE_SETUP"
+          [drawingMode]="'polygon'"
+          [drawingControl]="false"
+          (initialized$)="onDrawingManagerInit($event)">
+        </drawing-manager>
+
+        <polygon *ngIf="state > STATES.HOUSE_SETUP"
+          [editable]="false"
+          [paths]="housePolygon.path"
+          [strokeColor]="'#FFC107'"
+          [strokeOpacity]="0.8"
+          [strokeWeight]="2"
+          [fillColor]="'#FFC107'"
+          [fillOpacity]="0.35">
+        </polygon>
+
+        <polygon
+          *ngFor="let house of nearbyHouses"
+          [editable]="false"
+          [paths]="house.path"
+          [strokeColor]="'#FFC107'"
+          [strokeOpacity]="0.8"
+          [strokeWeight]="2"
+          [fillColor]="'#FFC107'"
+          [fillOpacity]="0.35">
+        </polygon>
+      </ng2-map>
+    </div>
+
+    <div class="registration_map_links">
+      <a href="javascript:void(0);"
+         *ngIf="state == STATES.HOUSE_READY" (click)="resetHomePolygon()">
+        Почати заново
+      </a>
+      <a href="javascript:void(0);"
+         (click)="resetHomePolygon()"
+         *ngIf="housePolygon && state == STATES.HOUSE_SAVED">
+        Я не згоден з границями будинку
+      </a>
+    </div>
+  </div>
+</form>

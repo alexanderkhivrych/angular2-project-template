@@ -1,0 +1,26 @@
+<div class="user_profile_edit">
+  <div class="user_profile_edit_title">
+    <span>Редагувати профіль</span>
+    <a href="#" class="button button_edit">Змінити</a>
+  </div>
+
+  <app-tabs-collection navigation="fragment" name="settingsTabs"
+                       headingCss="user_profile_edit_nav"
+                       contentCss="user_profile_edit_content">
+    <app-tabs-item title="Профіль" [name]="">
+      <app-settings-profile></app-settings-profile>
+    </app-tabs-item>
+    <app-tabs-item title="Сповіщення" name="notify">
+      <h1>TODO</h1>
+    </app-tabs-item>
+    <app-tabs-item title="Повідомлення" name="messages">
+      <h1>TODO</h1>
+    </app-tabs-item>
+    <app-tabs-item title="Приватність" name="privacy">
+      <h1>TODO</h1>
+    </app-tabs-item>
+    <app-tabs-item title="Сусіди поруч" name="nearby">
+      <h1>TODO</h1>
+    </app-tabs-item>
+  </app-tabs-collection>
+</div>

@@ -1,0 +1,23 @@
+.error_page {
+  background-color: #fff;
+  text-align: center;
+  padding: 142px 0 80px 0;
+
+  img {
+    width: 545px;
+  }
+
+  p {
+    color: #1E3544;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 29px;
+    margin-top: 95px;
+  }
+
+  .button_back {
+    @include button('medium', 'green');
+    width: 203px;
+    margin: 28px auto 0;
+  }
+}

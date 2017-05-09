@@ -1,0 +1,40 @@
+<div class="registration_map_notify" [ngSwitch]="step">
+  <a [routerLink]="" [queryParams]="{ tips: 1 }"></a>
+
+  <!-- find location address tips -->
+  <div class="registration_map_popup" *ngSwitchCase="1">
+    <a [routerLink]="" [queryParams]="null" class="registration_map_popup_close"></a>
+    <div class="registration_map_popup_title">
+      <span>Помістіть маркер на ваш будинок</span>
+    </div>
+    <div class="registration_map_popup_content">
+      <div class="registration_map_popup_wrapper">
+        <img src="/assets/images/video_bg.jpg" alt="">
+      </div>
+    </div>
+    <div class="registration_map_popup_links">
+      <a class="registration_next_link" [routerLink]="" [queryParams]="{ tips: 2 }">
+        Далі
+      </a>
+    </div>
+  </div>
+
+  <!-- draw house polygon tips -->
+  <div class="registration_map_popup" *ngSwitchCase="2">
+    <a [routerLink]="" [queryParams]="null" class="registration_map_popup_close"></a>
+    <div class="registration_map_popup_title">
+      <span>Як намалювати межі будинку?</span>
+    </div>
+    <div class="registration_map_popup_content">
+      <div class="registration_map_popup_wrapper">
+        <img src="/assets/images/video_bg.jpg" alt="dummy">
+      </div>
+    </div>
+    <p>Клацніть на мапі, щоб почати креслити межу. Кожен раз, коли ви клацнете на мапі, буде додано новий вузол межі.</p>
+    <div class="registration_map_popup_links">
+      <a [routerLink]="" [queryParams]="null">
+        Почати
+      </a>
+    </div>
+  </div>
+</div>

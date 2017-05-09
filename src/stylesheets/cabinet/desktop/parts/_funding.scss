@@ -1,0 +1,142 @@
+.funding_event {
+
+  .field_item {
+
+    > label {
+      width: 100%;
+    }
+  }
+
+  .field_date_price_section {
+    overflow: hidden;
+    margin: 3px 0;
+  }
+
+  .field_item_buttons {
+    text-align: right;
+    margin-top: 17px;
+
+    > a {
+      margin-left: 10px;
+    }
+  }
+
+  .field_item_add_file {
+    background: url(/assets/images/add_file_icon.png) no-repeat;
+    background-size: 34px;
+    display: inline-block;
+    vertical-align: middle;
+    width: 34px;
+    height: 34px;
+  }
+
+  .field_item_add_document {
+    background: url(/assets/images/add_document_icon.png) no-repeat;
+    background-size: 34px;
+    display: inline-block;
+    vertical-align: middle;
+    width: 34px;
+    height: 34px;
+  }
+
+  .field_item_send {
+    @include button('medium', 'green');
+    display: inline-block;
+    vertical-align: middle;
+    width: 131px;
+  }
+
+  .field_date_price_item {
+    width: 48%;
+    float: left;
+    position: relative;
+
+    .ui-datepicker-trigger {
+      width: 14px;
+      position: absolute;
+      bottom: 10px;
+      right: 12px;
+    }
+
+    &:last-child {
+      float: right;
+    }
+
+    > label {
+      color: #1E3544;
+      display: block;
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+
+    .input {
+      border: #C7D3D6 1px solid;
+      height: 34px;
+    }
+
+  }
+}
+
+.field_card {
+
+  > strong {
+    color: #1E3544;
+    display: block;
+    line-height: 19px;
+    margin: 2px 0;
+  }
+}
+
+.field_card_section {
+  @include border-radius(6px);
+  border: rgba(#D2DADC, .65) 1px solid;
+  width: 305px;
+}
+
+.field_card_title {
+  border-bottom: rgba(#D2DADC, .8) 1px solid;
+  padding: 6px 14px;
+
+  span {
+    background: url(/assets/images/card_icon.png) no-repeat;
+    background-size: 20px;
+    display: block;
+    width: 20px;
+    height: 16px;
+  }
+}
+
+.field_card_content {
+  background-color: rgba(#F5F6F6, .65);
+  padding: 10px 15px;
+}
+
+.field_card_item {
+  margin-bottom: 15px;
+
+  &.field_card_done {
+
+    .input {
+      background-color: rgba(#2FC45F, .05);
+      border-color: #2FC45F;
+    }
+  }
+
+  &:last-child {
+    margin-bottom: 4px;
+  }
+
+  label {
+    color: #738190;
+    display: block;
+    margin-bottom: 2px;
+  }
+
+  .input {
+    border: rgba(#C7D3D6, .9) 1px solid;
+    font-weight: 300;
+    width: 100%;
+    height: 34px;
+    text-align: center;
+  }
+}

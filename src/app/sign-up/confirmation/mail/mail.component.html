@@ -1,0 +1,28 @@
+<div class="registration_postcard_container">
+  <div class="registration_title">
+    <h2>Дякуємо! Поштівка надійде вам за 5-10 днів.</h2>
+    <p>
+      <span>Поштівка, яку ви отримаєте, буде містити вказівки щодо підтвердження вашої адреси.</span>
+      Вона буде виглядати як показано зліва.
+    </p>
+  </div>
+  <div class="registration_postcard_content">
+    <div class="registration_postcard_item">
+      <div class="registration_postcard_info">
+        <span>Не маєте часу чекати на поштівку?</span>
+        <p>Підтвердити адресу можна іншими методом.</p>
+      </div>
+      <a [routerLink]="" fragment="{{confirmPopupFragment}}" class="button button_done">Підтвердити зараз</a>
+    </div>
+    <div class="registration_postcard_item">
+      <div class="registration_postcard_info">
+        <span>Чекати поштівку</span>
+        <p>підтвердити адесу можливо на протязі 30 днів.</p>
+      </div>
+      <a [routerLink]="['../../../cabinet']" class="button button_wait">Чекати поштівку</a>
+    </div>
+  </div>
+</div>
+<div class="registration_postcard_wrapper">
+  <img src="/assets/images/postcard_wrapper.jpg" alt="postcard">
+</div>

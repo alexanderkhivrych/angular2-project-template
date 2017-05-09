@@ -1,0 +1,25 @@
+<form #f="ngForm" name="form" (ngSubmit)="login(f)" [check-error]="f" [server]="errors" novalidate>
+  <div class="field_item" display-error [check]="email" accept-error="default detail">
+    <input type="email" placeholder="Адреса електронної пошти" class="input"
+           name="email" [(ngModel)]="model.email" #email="ngModel"
+           required email maxlength="150"
+    />
+  </div>
+
+  <div class="field_item" display-error [check]="password"
+       [@shrinkOutEmail]="state" (@shrinkOutEmail.done)="animationFinished($event)">
+    <input type="password" placeholder="Пароль" class="input"
+           name="password" [(ngModel)]="model.password" #password="ngModel"
+           required minlength="6" maxlength="64"
+    />
+  </div>
+
+  <div class="field_item">
+    <input type="submit" value="Увійти" class="button button_login" [disabled]="loading">
+  </div>
+
+  <div class="field_item field_item_buttons">
+    <a href="#" class="field_item_fb">Увійти через Facebook</a>
+    <a href="#" class="field_item_vk">Увійти через VK</a>
+  </div>
+</form>

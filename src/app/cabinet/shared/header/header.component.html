@@ -1,0 +1,97 @@
+<div class="header">
+  <div class="header_content">
+    <div class="logo"><img src="/assets/images/logo.png" alt="logo"></div>
+<!--
+    <div class="header_info">
+      <a href="#" class="header_search"></a>
+      <a href="#" class="header_invite">Запросити</a>
+      <div class="header_user" *ngIf="user">
+        <div class="header_user_name">
+          <a href="#">{{user.first_name}}</a>
+        </div>
+        <a href="#" class="header_user_icon">
+          <img src="/assets/images/user_icon.png" alt="">
+        </a>
+      </div>
+    </div>
+ -->
+    <div class="header_info">
+      <div class="header_search" [class.active]="isSearchActive">
+        <div class="header_search_field">
+          <input type="text" class="input">
+        </div>
+        <span (click)="toggleSearch($event)"></span>
+        <div class="search_autocomplete" style="display: none;">
+          <div class="search_autocomplete_wrapper">
+            <a href="#" class="search_item search_item_person">
+              <span class="search_item_photo"><img src="/assets/images/post_icon.png" alt="post_icon"></span>
+              <span class="search_item_info">
+                <span>Микола Гаврищук</span>
+                <p>Користувач</p>
+              </span>
+              <span class="search_item_link"></span>
+            </a>
+            <div class="search_all_results"><a href="#">Показати всі результати</a></div>
+          </div>
+        </div>
+      </div>
+      <a href="#" class="header_invite">Запросити</a>
+      <div class="header_user active" *ngIf="user" (click)="this.toggleDropdown($event)">
+        <div class="header_user_name">
+          <a routerLink="">{{user.first_name}}</a>
+        </div>
+        <span class="header_user_icon">
+          <img src="/assets/images/user_icon.png" alt="user_icon">
+        </span>
+        <div class="header_drop" [hidden]="!isDropdownActive">
+          <div class="header_drop_wrapper" (click)="$event.stopPropagation()">
+            <div class="header_drop_user">
+              <div class="header_drop_user_icon">
+                <img src="/assets/images/user_icon.png" alt="user_icon">
+              </div>
+              <div class="header_drop_user_info">
+                <span>{{user.first_name}} {{user.last_name}}</span>
+                <a href="#">{{user.location.street}} {{user.location.street_number}}</a>
+              </div>
+            </div>
+            <div class="header_drop_nav">
+              <ul>
+                <li>
+                  <a [routerLink]="[pathTo('profile')]">
+                    <b><img src="/assets/images/header_user_icon1.png" alt="header_user_icon1"></b>
+                    <span>Профіль</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <b><img src="/assets/images/header_user_icon2.png" alt="header_user_icon2"></b>
+                    <span>Закладки</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <b><img src="/assets/images/header_user_icon3.png" alt="header_user_icon3"></b>
+                    <span>Налаштування</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <b><img src="/assets/images/header_user_icon4.png" alt="header_user_icon4"></b>
+                    <span>Допомога</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/" (click)="signOut($event)">
+                    <b><img src="/assets/images/header_user_icon5.png" alt="header_user_icon5"></b>
+                    <span>Вихід</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

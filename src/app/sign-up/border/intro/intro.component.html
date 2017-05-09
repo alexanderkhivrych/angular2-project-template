@@ -1,0 +1,32 @@
+<div class="registration_info">
+  <h3>Бажаєте створити сусідську спільноту у Інтернеті?</h3>
+  <p>Щоб створити власну сусідську спільноту:</p>
+  <ul>
+    <li>Позначте межі вашого району, якими їх бачите ви та ваші сусіди.</li>
+    <li>Запросіть ваших сусідів приєднатися до мережі, надіславши електронного листа, поштівку або за допомогою оголошень.</li>
+    <li>Привітайте учасників, які щойно приєдналися і починайте спілкування — станьте хорошим сусідом!</li>
+  </ul><a class="button" [routerLink]="['../draw']">Продовжити</a>
+</div>
+<div class="registration_map">
+  <div class="registration_map_container">
+    <ng2-map [zoom]="zoom" *ngIf="mapPosition"
+             center="{{mapPosition.lat}}, {{mapPosition.lng}}"
+             streetViewControl="false"
+             (mapReady$)="onMapInit($event)">
+
+      <marker *ngIf="locationPoint" [position]="locationPoint">
+      </marker>
+
+      <polygon [editable]="false"
+        *ngIf="borderPolygon"
+        [paths]="borderPolygon.path"
+        [strokeColor]="'#26b6a1'"
+        [strokeOpacity]="0.8"
+        [strokeWeight]="2"
+        [fillColor]="'#26b6a1'"
+        [fillOpacity]="0.4">
+      </polygon>
+
+    </ng2-map>
+  </div>
+</div>

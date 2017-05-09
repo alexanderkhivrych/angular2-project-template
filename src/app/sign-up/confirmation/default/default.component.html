@@ -1,0 +1,19 @@
+<div class="registration_title">
+  <h2>Добре! Тепер підтвердьте вашу адресу.</h2>
+  <strong>Щоб зробити сторінку вашої сусідської спільноти безпечнішою та надійнішою, всім її учасникам потрібно підтвердити свою адресу.</strong>
+  <p *ngIf="address">
+    Підтвердьте, що мешкаєте за адресою {{address}} одним із нижченаведених способів:
+    <br>
+    Неправильна адреса? <a href="#">Клацніть сюди </a>і виправте.
+  </p>
+</div>
+<div class="registration_confirm">
+  <a [routerLink]="" fragment="{{confirmPopupFragment}}" class="registration_confirm_item">
+    <strong>Рахунок на сплату комунальних послуг</strong>
+    <span>Моментальне підтвердження Вашого облікового запису, безпечно</span>
+  </a
+  ><a [routerLink]="['./mail']" class="registration_confirm_item">
+    <strong>Поштівка</strong>
+    <span>Від 5-10 днів, безкоштовно</span>
+  </a>
+</div>

@@ -1,0 +1,26 @@
+<div class="popup_overlay" *ngIf="">
+  <div class="popup popup_registration_request">
+    <a class="popup_close" href="" (click)="close($event)"></a>
+
+    <div class="popup_title"><span>Введіть код вказаній в запрошенні</span></div>
+    <div class="popup_content">
+      <form>
+        <div class="field_item field_error">
+          <input type="text" placeholder="Введіть код" class="input">
+        </div>
+        <div class="field_item field_done">
+          <input type="text" placeholder="Введіть код" class="input">
+        </div>
+        <div class="field_item">
+          <p>
+            Ваша інформація <a  >захищена і конфіденційна.</a>
+          </p>
+        </div>
+        <div class="field_buttons">
+          <a href="" (click)="close($event)">Відмінити</a>
+          <input type="submit" value="НАДІСЛАТИ" class="button">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

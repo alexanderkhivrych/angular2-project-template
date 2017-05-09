@@ -1,0 +1,115 @@
+<div class="map">
+  <div class="map_wrapper">
+    <ng2-map [zoom]="initialZoom"
+             center="{{myLocation.lat}}, {{myLocation.lng}}"
+             streetViewControl="false"
+             (zoom_changed)="onMapZoom($event)"
+             (mapReady$)="onMapInit($event)">
+
+      <ng-container *ngIf="isHousesVisible">
+        <polygon *ngFor="let house of borderHouses"
+          [editable]="false"
+          [paths]="house.polygon.path"
+          [strokeColor]="'#FFC107'"
+          [strokeOpacity]="0.8"
+          [strokeWeight]="2"
+          [fillColor]="'#FFC107'"
+          [fillOpacity]="0.35"
+          (click)="onClickHouse($event, house)">
+        </polygon>
+      </ng-container>
+
+      <ng-container *ngIf="!isHousesVisible">
+        <polygon *ngIf="this.border"
+          [editable]="false"
+          [paths]="this.border.polygon.path"
+          [strokeColor]="'#26b6a1'"
+          [strokeOpacity]="0.8"
+          [strokeWeight]="2"
+          [fillColor]="'#26b6a1'"
+          [fillOpacity]="0.4">
+        </polygon>
+
+        <polygon *ngFor="let border of nearbyBorders"
+          [editable]="false"
+          [paths]="border.polygon.path"
+          [strokeColor]="'#5a95e9'"
+          [strokeOpacity]="0.6"
+          [strokeWeight]="2"
+          [fillColor]="'#5a95e9'"
+          [fillOpacity]="0.4">
+        </polygon>
+      </ng-container>
+
+      <marker *ngIf="locationPoint" [position]="locationPoint">
+      </marker>
+    </ng2-map>
+  </div>
+  <div class="map_content" *ngIf="border">
+    <div class="map_position" *ngIf="isHousesVisible">
+      <a href="#" class="map_position_close"></a>
+      <div class="map_position_title"><span>{{border.name}}</span></div>
+      <div class="map_position_static">
+        <div class="map_position_static_content">
+          <div class="map_position_static_item"><span>{{housesCount}}</span>
+            <p>
+              Помешкань <br>в районі
+            </p>
+          </div>
+          <div class="map_position_static_item"><span>{{usersCount}}</span>
+            <p>
+              Сусідів в  <br>мережі
+            </p>
+          </div>
+        </div>
+        <div class="map_position_static_progress">
+          <span style="width: 50%;"></span>
+        </div>
+        <a href="#" class="button button_invite">Запросити сусідів</a>
+        <div class="map_position_status">
+          <div class="map_position_status_online">Сусіди в мережі</div>
+          <div class="map_position_status_not_invite">Ще не запрошені</div>
+          <div class="map_position_status_not_answer">Не відповіли </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="map_neighbors_links">
+      <a [routerLink]="['../dashboard']" class="button button_back">Повернутись на головну</a>
+    </div>
+
+    <div class="map_point" *ngIf="isHousesVisible && selectedHouse">
+      <a href="#" class="map_point_close"></a>
+      <div class="map_point_title"><span>{{selectedHouse.address || selectedHouse.id}}</span></div>
+      <div class="map_point_content">
+        <div class="map_point_item map_point_top" *ngFor="let inhabitant of inhabitants">
+          <div class="map_point_photo">
+            <img [src]="inhabitant.avatar_url || '/assets/images/user_photo.png'" alt="avatar" />
+          </div>
+          <div class="map_point_info">
+            <span><a href="#">{{inhabitant.formatted_name}}</a></span>
+            <p><a [routerLink]="['../messages']" [queryParams]="{recipientId: inhabitant.id}">Написати повідомлення</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="map_neighbors" *ngIf="!isHousesVisible">
+      <a href="#" class="map_neighbors_close"></a>
+      <div class="map_neighbors_title"><span>Сусідні райони</span></div>
+      <div class="map_neighbors_content">
+        <div class="map_neighbors_item" *ngFor="let border of nearbyBorders">
+          <label>{{border.name}}</label>
+          <div class="filter_switchery">
+            <ui-switch
+              size="small"
+              [(ngModel)]="border.connected"
+              (change)="onConnectedBordersChanged(border, $event)">
+            </ui-switch>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

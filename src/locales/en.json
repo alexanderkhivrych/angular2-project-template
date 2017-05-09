@@ -1,0 +1,33 @@
+{
+  "pages": {
+    "login": {
+      "title": "Спілкуйтеся з вашими сусідами",
+      "description": "Що почалось у мережі, продовжується у дворі."
+    }
+  },
+  "errors": {
+    "required": "required field",
+    "minlength": "field is too short",
+    "maxlength": "field is too long",
+    "invalidEmail": "email is invalid",
+
+    "email": {
+      "required": "email required",
+      "minlength": "email is too short",
+      "maxlength": "email is too long (max 140 symbols)",
+      "invalidEmail": "email is invalid"
+    },
+
+    "password": {
+
+    },
+    "password_confirmation": {
+      "confirmation": "not equals"
+    }
+  },
+  "gender_type": {
+    "man": "Man",
+    "woman": "Woman",
+    "none": "Don't tell"
+  }
+}

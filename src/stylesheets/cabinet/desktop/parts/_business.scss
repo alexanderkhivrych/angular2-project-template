@@ -1,0 +1,92 @@
+.business_heading {
+
+  h2 {
+    color: #FFFFFF;
+    font-size: 48px;
+    line-height: 63px;
+    text-align: center;
+    margin-top: 42px;
+  }
+}
+
+.business_heading_search {
+  position: relative;
+  margin-top: 59px;
+
+  .input {
+    @include border-radius(46px);
+    border: none;
+    width: 100%;
+    height: 46px;
+    padding: 0 180px 0 20px;
+  }
+
+  .button_search {
+    @include button('big', 'green');
+    width: 170px;
+    height: 46px;
+    line-height: 48px;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+
+.business_links {
+  overflow: hidden;
+  margin-top: 25px;
+
+  .add_link {
+    color: #26B6A1;
+    float: left;
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: none;
+    margin-top: 10px;
+  }
+
+  .back_link {
+    color: #26B6A1;
+    float: right;
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: none;
+    margin-top: 10px;
+  }
+
+  .button_next {
+    @include button('medium', 'green');
+    float: right;
+    width: 123px;
+    margin-left: 30px;
+  }
+}
+
+.business_notification {
+  @include border-radius(2px);
+  border: #DDE8EB 1px solid;
+  position: relative;
+  margin-bottom: 14px;
+}
+
+.business_notification_close {
+  background: url(/assets/images/close_icon.png) no-repeat;
+  background-size: 10px;
+  display: block;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: 14px;
+  right: 14px;
+}
+
+.business_notification_content {
+  background: url(/assets/images/light_icon.png) 30px center no-repeat;
+  background-size: 38px;
+  padding: 30px 20px 30px 96px;
+
+  p {
+    color: #1E3544;
+    line-height: 20px;
+  }
+}

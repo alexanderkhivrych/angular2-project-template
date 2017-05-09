@@ -1,0 +1,83 @@
+.chat_files {
+  padding-bottom: 10px;
+}
+
+.chat_file_item {
+  border-bottom: #E5F3F1 1px solid;
+  overflow: hidden;
+  padding: 21px 15px;
+}
+
+.chat_file_icon {
+  background: url(/assets/images/file_icon.png) no-repeat;
+  background-size: 36px;
+  display: inline-block;
+  vertical-align: middle;
+  width: 36px;
+  height: 46px;
+  margin-right: 12px;
+
+  span {
+    color: #FFFFFF;
+    display: block;
+    font-size: 10px;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 27px;
+  }
+}
+
+.chat_file_info {
+  display: inline-block;
+  vertical-align: middle;
+  min-width: 25%;
+  max-width: 50%;
+
+  span {
+    color: #2D363B;
+    display: block;
+    font-size: 15px;
+    line-height: 20px;
+    font-weight: 500;
+    margin-bottom: 3px;
+  }
+
+  a {
+    color: #26B6A1;
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+  }
+}
+
+.chat_file_details {
+  color: #A5AEB4;
+  font-size: 10px;
+  line-height: 13px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 20px;
+
+  span {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  p {
+
+  }
+}
+
+.chat_file_download {
+  float: right;
+  margin-top: 3px;
+
+  a {
+    background: url(/assets/images/download_icon.png) no-repeat;
+    background-size: 40px;
+    display: inline-block;
+    vertical-align: middle;
+    width: 40px;
+    height: 40px;
+  }
+}

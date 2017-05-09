@@ -1,0 +1,15 @@
+<div class="registration_container">
+  <div class="registration_title">
+    <h2>{{modeSharedData.title}}</h2>
+
+    <div class="registration_map_notify">
+      <a href="javascript:void(0);" (click)=toggleTips()></a>
+      <ng-container (click)="$event.stopPropagation()">
+        <border-tips *ngIf="isTipsShown" [step]="tipStep"></border-tips>
+      </ng-container>
+    </div>
+  </div>
+  <router-outlet></router-outlet>
+</div>
+
+

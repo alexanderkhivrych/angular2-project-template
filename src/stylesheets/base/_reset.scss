@@ -1,0 +1,25 @@
+html, body {
+  background-color: rgba(#F6F9F9, .75);
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+  height: 100%;
+}
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+
+  margin: 0;
+  padding: 0;
+}
+img {
+  border: none;
+}
+input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+table {
+  font-size: 14px;
+}

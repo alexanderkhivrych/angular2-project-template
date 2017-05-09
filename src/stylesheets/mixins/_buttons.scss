@@ -1,0 +1,36 @@
+@mixin button($button-size, $button-bg) {
+  border: none;
+  color: #fff;
+  display: block;
+  outline: none;
+  text-align: center;
+  text-transform: none;
+  text-decoration: none;
+  font-weight: 300;
+
+  @if $button-size == "big" {
+    @include border-radius(42px);
+    font-size: 12px;
+    font-weight: bold;
+    height: 42px;
+    line-height: 42px;
+  }
+
+  @if $button-size == "medium" {
+    @include border-radius(34px);
+    font-size: 12px;
+    font-weight: bold;
+    height: 34px;
+    line-height: 34px;
+  }
+
+  // button bg
+  @if $button-bg == "green" {
+    background-color: #26B6A1;
+  }
+
+  @if $button-bg == "silver" {
+    background-color: #F5F9F9;
+    color: #26B6A1;
+  }
+}

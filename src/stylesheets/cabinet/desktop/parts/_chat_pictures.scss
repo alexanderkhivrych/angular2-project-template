@@ -1,0 +1,19 @@
+.chat_pictures {
+  padding: 15px;
+}
+
+.chat_picture_item {
+  display: inline-block;
+  vertical-align: top;
+  width: 160px;
+  margin: 0 6px 10px 0;
+
+  &:nth-child(4n) {
+    margin-right: 0;
+  }
+
+  img {
+    @include border-radius(2px);
+    max-width: 100%;
+  }
+}

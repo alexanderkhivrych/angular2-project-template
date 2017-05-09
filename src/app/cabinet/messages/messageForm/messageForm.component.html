@@ -1,0 +1,39 @@
+<modal #messageModal [hideCloseButton]=true>
+  <modal-content>
+    <div class="popup popup_message"><a (click)="resetForm(msgForm);" class="popup_close"></a>
+      <div class="popup_title"><span>Надіслати повідомлення сусідові</span></div>
+      <div class="popup_content">
+        <div class="popup_message_form">
+          <form  #msgForm="ngForm" [check-error]="msgForm" [server]="errors" novalidate  name="msgForm"  (ngSubmit)="onSubmit(msgForm, $event);" >
+            <div display-error [check]="recipientId" class="field_item field_choice">
+              <select2 [cssImport]="false"
+                       [ngModelOptions]="{standalone: true}"
+                       [(ngModel)]="model.recipientId"
+                       ngDefaultControl
+                       #recipientId="ngModel"
+                       required
+                       (valueChanged)="onChangRecipient($event)"
+                       [options]= "{multiple:false, templateResult:templateResult, required:true, placeholder: 'Вкажіть сусіда'}"
+                       [data]="neighborList">
+              </select2>
+            </div>
+            <div display-error [check]="subject" class="field_item field_theme">
+              <input type="text"  required [(ngModel)]="model.subject" name ="subject" #subject="ngModel"  placeholder="Вкажіть тему" class="input">
+            </div>
+            <div display-error [check]="text"  class="field_item field_message">
+              <textarea   [(ngModel)]="model.text" required  #text="ngModel"  name="text" placeholder="Напишіть повідомлення" class="textarea"></textarea>
+            </div>
+            <div class="field_item field_agree">
+              <div class="checker" id="uniform-copy_field"><span class=""><input type="checkbox" id="copy_field" ></span></div>
+              <label for="copy_field">Надішліть копію цього повідомлення мені на електронну пошту</label>
+            </div>
+            <div class="field_item field_links">
+              <input type="submit"  value="НАДІСЛАТИ" class="button button_send">
+              <a (click)="resetForm(msgForm); ">Відмінити</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </modal-content>
+</modal>

@@ -1,0 +1,67 @@
+.business_personal {
+  background-color: #fff;
+  padding-bottom: 40px;
+
+  .business_heading {
+    background: url(/assets/images/business_personal_bg.png) no-repeat;
+    width: 700px;
+    height: 260px;
+    padding: 25px;
+  }
+
+  .button_business_more {
+    @include button('medium', 'green');
+    width: 155px;
+    margin: 20px auto 0;
+  }
+}
+
+.business_how_works {
+  text-align: center;
+  padding-top: 25px;
+}
+
+.business_how_works_title {
+
+  span {
+    color: #1E3544;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 29px;
+  }
+}
+
+.business_how_works_content {
+  margin-top: 16px;
+}
+
+.business_how_works_item {
+  display: inline-block;
+  vertical-align: top;
+  width: 170px;
+  margin: 0 25px;
+
+  span {
+    color: #1E3544;
+    display: block;
+    font-weight: 500;
+    margin-bottom: 18px;
+  }
+
+  p {
+    color: #929DA8;
+    font-size: 10px;
+    line-height: 14px;
+  }
+}
+
+.business_how_works_photo {
+  width: 75px;
+  height: 75px;
+  margin: 0 auto 15px;
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
